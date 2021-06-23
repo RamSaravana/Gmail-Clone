@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gmail API Quickstart</title>
+    <meta charset="utf-8" />
+    <!-- added apart from google doc -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- added Favicon and page title -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/gmail-icon.png">
+    <title>Google Mail - A Gmail clone</title>
+    <!-- add google icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- add CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+
+    <!-- Header section containing logo, searchbar, settings icon and others -->
+    <header class="top">
+        <div class="top-left">
+            <span class="material-icons">menu</span>
+            <a href="#">
+            <img src="images/gmail-logo.png" alt="logo">
+            </a>
+        </div>
+        <div class="top-middle">
+            <span class="material-icons"> search </span>
+            <input type="search" id="searchbar" placeholder="Search mail">
+            <span class="material-icons"> arrow_drop_down </span>
+        </div>
+        <div class="top-right">
+            <span class="material-icons"> help_outline </span>
+            <span class="material-icons"> settings </span>
+            <span class="material-icons"> apps </span>
+            <span class="authorizeButton"> 
+                <!--Add buttons to initiate auth sequence and sign out-->
+                <button id="authorize_button" style="display: none;">Log In</button>
+                <button id="signout_button" style="display: none;">Sign Out</button>
+             </span>
+        </div>
+    </header>
+    <!-- main body contains there sections -->
+    <main>
+        <!-- contains compise button, inbox,sent mail, draft and other buttons  -->
+        <aside class="navigation">
+            <button class="nav compose" onclick="composeMail()"><span class="material-icons"> create </span> <p>Compose</p> </button>
+            <button class="nav inbox" onclick="inboxMails()"><span class="material-icons"> mail </span> <p>Inbox</p> </button>
+            <button class="nav draft" onclick="draftMails()"><span class="material-icons"> drafts </span>  <p>Draft</p> </button>
+            <button class="nav sent" onclick="sentMails()"> <span class="material-icons"> send </span> <p>Sent</p> </button>
+            <button class="nav bin" onclick="trash()"> <span class="material-icons"> delete </span>  <p>Bin</p> </button> 
+            <hr>
+        </aside>
+        <!-- contains 4 parts => 1.div on top 2.primary,social and promotion sections 3.email list  4.terms and condition links -->
+        <section class="emails">
+            <div id="before-mail">icons</div>
+            <div id="email-head">mail subject</div>
+            <div id="mail-body">body</div>
+        </section>
+        <!-- contains small google icons in a vertical manner -->
+        <section class="hidden">
+            <span class="material-icons"> calendar_today </span>
+            <span class="material-icons"> note_add </span>
+            <span class="material-icons"> add_task </span>
+            <span class="material-icons"> contacts </span>
+            <hr>
+            <span class="material-icons"> add </span>
+            <span class="blank"></span>
+            <span class="material-icons"> chevron_right </span>                    
+        </section>
+    </main>
+
+    <!-- <a href="../Gmail-clone/index.html">Navigate to Gmail App</a> -->
+
+
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+
+    <script type="text/javascript" src='./script/googleapi.js'>
+      
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+  </body>
+</html>
